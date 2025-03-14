@@ -197,10 +197,10 @@ function deleteMovie(movie) {
 //---------------------------Film Screening Oversigt---------------------------
 //---------------------------Sletter en film og sætter moviescreeningId til inactive i DB---------------------------
 function deleteMovieScreening(movieScreening) {
-    if (!confirm("Er du sikker på, at du vil slette filvisningen: " + movieScreening.movieTitle)) {
+    if (!confirm("Er du sikker på, at du vil slette filmvisningen: " + movieScreening.movieTitle)) {
         return;
     }
-    fetch(`https://kinoxpapi-hqhfffgncxdhf6bu.northeurope-01.azurewebsites.net/${movieScreening.movieScreeningId}`, {
+    fetch(`https://kinoxpapi-hqhfffgncxdhf6bu.northeurope-01.azurewebsites.net/deactivateMovieScreening/${movieScreening.movieScreeningId}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
